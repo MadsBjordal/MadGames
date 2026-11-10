@@ -12,6 +12,7 @@ Status: proposed · accepted · superseded · rejected.
 | D-0004 | 2026-11-10 | studio | Repository structure: studio repo, framework repo, one repo per game | proposed |
 | D-0005 | 2026-11-10 | studio | Technology: TypeScript + Capacitor 8, break_eternity.js, Vitest | proposed |
 | D-0006 | 2026-11-10 | studio | Commercial scoring model with the brief's weights | accepted |
+| D-0007 | 2026-11-10 | all | Reuse or extend existing functions; new ones only when needed | accepted |
 
 ## D-0001 Research before code; owner approves the first game
 
@@ -57,3 +58,9 @@ Status: proposed · accepted · superseded · rejected.
 
 - Selected: criteria and weights from the owner's brief (demand 20, competition 20, retention 20, monetization 15, dev efficiency 10, expansion 10, portfolio 5); scores 1–10 are judgement unless evidence is cited.
 - Consequences: rankings in the Phase 1 report; re-score when validation data (fake-door tests, soft-launch KPIs) exists.
+
+## D-0007 Reuse or extend existing functions; new ones only when needed
+
+- Problem: duplicate functions that do nearly the same thing make the games harder to maintain.
+- Selected (owner's instruction, 2026-11-10): read all `.md` files before adding a function; use or extend an existing function; make a new one only when no existing function can cover the feature or the extension would make the app slow to run; record it in the function registry.
+- Consequences: every session reads the registries first (see `CLAUDE.md`); commit messages say why a new function was needed.
