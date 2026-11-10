@@ -4,7 +4,7 @@ One row per game. Kept current by every session that works on a game. Versions a
 
 | ID | Working title | Stage | Repository | App version | Framework version | Save schema | Priority | Next action |
 |---|---|---|---|---|---|---|---|---|
-| game-001 | Abyss Station | A: validation (concept approved 2026-11-10) | not created yet; docs in `game-projects/game-001-abyss-station/docs/` | N/A | N/A | N/A | High | Owner creates the game repository; then Stage B (design document, economy simulation) |
+| game-001 | Abyss Station | B: design & architecture | [MadsBjordal/abyss-station](https://github.com/MadsBjordal/abyss-station), branch `claude/wonderful-hamilton-3pm5kt` | 0.0.1 | 0.1.0 (in the game repo, `framework/`) | none yet | High | Finish economy calibration; wireframes; art test; Android test build with a test rewarded ad |
 
 Stages: research · concept · design · vertical-slice · development · internal-test · closed-test · soft-launch · released · live-ops · paused · retired.
 
@@ -19,7 +19,6 @@ Stages: research · concept · design · vertical-slice · development · intern
 
 ## Risks, blockers, dependencies
 
-- Blocker: game-001 repository must be created by the owner before code starts.
 - Owner availability: about 8 hours a week (D-0009).
 - Dependency: personal Google Play developer account (owner, D-0009): a 12-tester, 14-day closed test before production; start recruiting testers now.
 - Dependency: new GitHub repositories must be created by the owner (this studio's sessions cannot create repositories).

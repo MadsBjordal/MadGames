@@ -1,6 +1,10 @@
 # Function registry
 
-Empty: no code exists yet.
+Registries per repository (generated from the code):
+
+| Repository | Registry | Shared modules used |
+|---|---|---|
+| abyss-station (game-001) | `docs/function-registry.md` (`pnpm docs:functions`) | `@madgames/framework` 0.1.0 (lives in `framework/` of that repo until the vertical slice, D-0004) |
 
 Plan (D-0004): each code repository generates its own registry from doc comments (name, purpose, file, inputs/outputs, tests, version introduced), and CI fails when it is out of date. This file will list those registries and which games use which shared modules. Before adding a function, search the registries and reuse or extend what exists.
 
