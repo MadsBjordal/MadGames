@@ -91,7 +91,7 @@ Status: proposed · accepted · superseded · rejected.
 - Problem: with Charts = (Samples ÷ base)^0.33, each new station made the next run richer and Charts snowballed; the calibration could not hold back the late zones even with extreme requirements.
 - Alternatives: lower power; caps per run.
 - Selected: Charts on offer = floor(3 × (log10(Samples ÷ base) + 1)); each Chart +40% yield; the chart gate costs 29× more per ocean.
-- Reasons: steady growth across oceans; calibrated so the average player reaches ocean 3 around day 53–59 and the hadal trench around day 160 (`abyss-station/reports/economy/latest.md`).
+- Reasons: steady growth across oceans; calibrated so the average player reaches ocean 3 around day 53–59 and the hadal trench around day 180 (`abyss-station/reports/economy/latest.md`).
 
 ## D-0011 First-session goals in play time (studio)
 
