@@ -4,7 +4,7 @@ One row per game. Kept current by every session that works on a game. Versions a
 
 | ID | Working title | Stage | Repository | App version | Framework version | Save schema | Priority | Next action |
 |---|---|---|---|---|---|---|---|---|
-| game-001 | Abyss Station | B: design & architecture | [MadsBjordal/abyss-station](https://github.com/MadsBjordal/abyss-station), branch `claude/wonderful-hamilton-3pm5kt` | 0.0.1 | 0.1.0 (in the game repo, `framework/`) | none yet | High | Finish economy calibration; wireframes; art test; Android test build with a test rewarded ad |
+| game-001 | Abyss Station | B: design & architecture | [MadsBjordal/abyss-station](https://github.com/MadsBjordal/abyss-station), branch `claude/wonderful-hamilton-3pm5kt` | 0.0.1 | 0.1.0 (in the game repo, `framework/`) | none yet | High | Owner reviews the art test; sketch Lab, Expeditions, New station, Settings; Android test build with a test rewarded ad |
 
 Stages: research · concept · design · vertical-slice · development · internal-test · closed-test · soft-launch · released · live-ops · paused · retired.
 
