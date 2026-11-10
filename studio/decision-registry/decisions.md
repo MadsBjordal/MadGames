@@ -19,6 +19,7 @@ Status: proposed · accepted · superseded · rejected.
 | D-0011 | 2026-11-10 | studio | First-session pacing goals are measured in play time | accepted |
 | D-0012 | 2026-11-10 | game-001 | Return-bonus ad: +50% of the offline haul, once a day | accepted |
 | D-0013 | 2026-11-10 | studio | No rewarded ads before the player knows the game | accepted |
+| D-0014 | 2026-11-10 | game-001 | Art direction: creatures drawn in code, lit by their own light | accepted |
 
 ## D-0001 Research before code; owner approves the first game
 
@@ -110,3 +111,11 @@ Status: proposed · accepted · superseded · rejected.
 - Problem: in Abyss Station's simulation an ad watched in the first minute (×2 speed in the steepest part of the curve) put ad watchers 17× ahead of non-watchers after one hour; a brand-new player should also not be asked to watch ads before understanding the game.
 - Selected: each game names the unlock from which ads are offered (Abyss Station: the lab, ~12–16 min of play). Non-watchers now match watchers for the whole first day.
 - Applies to every studio game (D-0003 complements it).
+
+## D-0014 Art direction: creatures drawn in code, lit by their own light (game-001)
+
+- Problem: the first art test (thin glowing outlines) looked childish to the owner.
+- Alternatives: illustrated species by an illustrator; AI-generated illustrations with a commercial licence (both cost money and need a style guide and curation for ~120 species).
+- Selected: the second art study, approved by the owner ("this style is good"): vector creatures drawn in code with real anatomy, texture and shading, lit only by their own light (lure, photophores) or a probe's searchlight, deep-sea documentary look.
+- Consequences: no art cost; each species is hand-built (slow but consistent); a painted hero image for the store page can still be added later. Sources: `abyss-station/prototypes/angler-study.html`, `scripts/species-art.py`, `docs/assets.md`. Performance of filters on midrange phones is checked in the vertical slice.
+- Supersedes: the first art test (outline style), not recorded as a decision.
