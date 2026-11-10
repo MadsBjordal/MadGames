@@ -18,6 +18,7 @@ Status: proposed · accepted · superseded · rejected.
 | D-0010 | 2026-11-10 | game-001 | Prestige currency (Charts) grows logarithmically | accepted |
 | D-0011 | 2026-11-10 | studio | First-session pacing goals are measured in play time | accepted |
 | D-0012 | 2026-11-10 | game-001 | Return-bonus ad: +50% of the offline haul, once a day | accepted |
+| D-0013 | 2026-11-10 | studio | No rewarded ads before the player knows the game | accepted |
 
 ## D-0001 Research before code; owner approves the first game
 
@@ -91,7 +92,7 @@ Status: proposed · accepted · superseded · rejected.
 - Problem: with Charts = (Samples ÷ base)^0.33, each new station made the next run richer and Charts snowballed; the calibration could not hold back the late zones even with extreme requirements.
 - Alternatives: lower power; caps per run.
 - Selected: Charts on offer = floor(3 × (log10(Samples ÷ base) + 1)); each Chart +40% yield; the chart gate costs 29× more per ocean.
-- Reasons: steady growth across oceans; calibrated so the average player reaches ocean 3 around day 53–59 and the hadal trench around day 180 (`abyss-station/reports/economy/latest.md`).
+- Reasons: steady growth across oceans; calibrated so the average player reaches ocean 3 around day 53–59 and the hadal trench around day 112 (after D-0013) (`abyss-station/reports/economy/latest.md`).
 
 ## D-0011 First-session goals in play time (studio)
 
@@ -103,3 +104,9 @@ Status: proposed · accepted · superseded · rejected.
 
 - Problem: doubling the offline haul (the biggest income for most players) made non-watchers 1.44–1.6× slower to the first new station, above the 1.3× fairness target (D-0003).
 - Selected: +50% of the haul, once a day, after ≥ 30 min away. Non-watchers are now ~1.3× slower; the report flags anything above 1.35×.
+
+## D-0013 No rewarded ads before the player knows the game (studio)
+
+- Problem: in Abyss Station's simulation an ad watched in the first minute (×2 speed in the steepest part of the curve) put ad watchers 17× ahead of non-watchers after one hour; a brand-new player should also not be asked to watch ads before understanding the game.
+- Selected: each game names the unlock from which ads are offered (Abyss Station: the lab, ~12–16 min of play). Non-watchers now match watchers for the whole first day.
+- Applies to every studio game (D-0003 complements it).
