@@ -7,12 +7,14 @@ Status: proposed · accepted · superseded · rejected.
 | ID | Date | Project | Title | Status |
 |---|---|---|---|---|
 | D-0001 | 2026-11-10 | studio | Research before code; owner approves the first game | accepted |
-| D-0002 | 2026-11-10 | studio | Android first, iOS prepared later | proposed |
-| D-0003 | 2026-11-10 | studio | Rewarded ads only by default; no forced interstitials | proposed |
-| D-0004 | 2026-11-10 | studio | Repository structure: studio repo, framework repo, one repo per game | proposed |
-| D-0005 | 2026-11-10 | studio | Technology: TypeScript + Capacitor 8, break_eternity.js, Vitest | proposed |
+| D-0002 | 2026-11-10 | studio | Android first, iOS prepared later | accepted |
+| D-0003 | 2026-11-10 | studio | Rewarded ads only by default; no forced interstitials | accepted |
+| D-0004 | 2026-11-10 | studio | Repository structure: studio repo, framework repo, one repo per game | accepted |
+| D-0005 | 2026-11-10 | studio | Technology: TypeScript + Capacitor 8, break_eternity.js, Vitest | accepted |
 | D-0006 | 2026-11-10 | studio | Commercial scoring model with the brief's weights | accepted |
 | D-0007 | 2026-11-10 | all | Reuse or extend existing functions; new ones only when needed | accepted |
+| D-0008 | 2026-11-10 | game-001 | First game: Abyss Station | accepted |
+| D-0009 | 2026-11-10 | studio | Publish with a personal Google Play developer account | accepted |
 
 ## D-0001 Research before code; owner approves the first game
 
@@ -26,7 +28,7 @@ Status: proposed · accepted · superseded · rejected.
 
 - Problem: limited time; two stores double release work.
 - Alternatives: both at once; iOS first.
-- Selected (proposed): Android first; keep the code free of Android-only assumptions so iOS can follow.
+- Selected (accepted by the owner 2026-11-10): Android first; keep the code free of Android-only assumptions so iOS can follow.
 - Reasons: owner's brief; no Mac needed to start; Apple Developer costs $99/year; research found no strong reason to launch both at once.
 - Dependencies: D-0005 (the stack supports iOS).
 
@@ -34,7 +36,7 @@ Status: proposed · accepted · superseded · rejected.
 
 - Problem: forced ads are the most common cause of 1–2 star reviews in the competitor matrix.
 - Alternatives: interstitials between sessions; banners.
-- Selected (proposed): opt-in rewarded ads with a daily cap; a one-time "ad-free" purchase that makes rewards automatic; no interstitials or banners unless later evidence supports them for a specific game.
+- Selected (accepted by the owner 2026-11-10): opt-in rewarded ads with a daily cap; a one-time "ad-free" purchase that makes rewards automatic; no interstitials or banners unless later evidence supports them for a specific game.
 - Reasons: community and review evidence (`raw/player-sentiment-and-niches-2026-11.md`, `raw/competitors-store-data-2026-11.md`); Egg, Inc. shows optional ads work at scale.
 - Consequences: lower ad revenue per player than aggressive competitors; balance must not depend on ads.
 
@@ -42,7 +44,7 @@ Status: proposed · accepted · superseded · rejected.
 
 - Problem: several games over time must not break each other.
 - Alternatives: one monorepo for everything; framework copied into each game.
-- Selected (proposed): `MadGames` = studio control (research, registries, standards); `madgames-framework` = shared TypeScript package with semver tags; one repository per game pinning an exact framework version. Until game 001's vertical slice is proven, the framework lives in a `framework/` folder in game 001 and is split out afterwards.
+- Selected (accepted by the owner 2026-11-10): `MadGames` = studio control (research, registries, standards); `madgames-framework` = shared TypeScript package with semver tags; one repository per game pinning an exact framework version. Until game 001's vertical slice is proven, the framework lives in a `framework/` folder in game 001 and is split out afterwards.
 - Reasons: isolation of released games; avoid designing a framework before knowing what is reusable.
 - Dependencies: owner creates new GitHub repositories.
 
@@ -50,7 +52,7 @@ Status: proposed · accepted · superseded · rejected.
 
 - Problem: choose an engine that an AI agent can build and test headlessly, with maintained ads and purchase plugins.
 - Alternatives: Godot 4.7, Unity 6, Flutter + Flame, React Native/Expo (comparison in `studio/market-research/raw/tech-stack-2026-11.md`).
-- Selected (proposed, to confirm in Stage B): TypeScript + Capacitor 8, break_eternity.js for big numbers, Vitest simulations in Node, @capacitor-community/admob with Google UMP consent, a maintained billing plugin; target SDK 36.
+- Selected (accepted by the owner 2026-11-10; confirmed technically by a tiny Android test build in Stage B): TypeScript + Capacitor 8, break_eternity.js for big numbers, Vitest simulations in Node, @capacitor-community/admob with Google UMP consent, a maintained billing plugin; target SDK 36.
 - Reasons: plain-text code and Node tests suit AI-assisted development; same family as G OPS, which the owner already runs; best maintained big-number library.
 - Risks: community-maintained AdMob plugin (start AdMob-only, no mediation); WebView performance on low-end phones (keep effects modest, measure on a midrange device).
 
@@ -64,3 +66,19 @@ Status: proposed · accepted · superseded · rejected.
 - Problem: duplicate functions that do nearly the same thing make the games harder to maintain.
 - Selected (owner's instruction, 2026-11-10): read all `.md` files before adding a function; use or extend an existing function; make a new one only when no existing function can cover the feature or the extension would make the app slow to run; record it in the function registry.
 - Consequences: every session reads the registries first (see `CLAUDE.md`); commit messages say why a new function was needed.
+
+## D-0008 First game: Abyss Station
+
+- Problem: choose the first game (Phase 1 Task 10).
+- Alternatives: Alchemist's Atelier (7.20), Dig & Display (6.70), a one-week fake-door test of the top two.
+- Selected: Abyss Station (score 7.55), the owner's choice 2026-11-10 ("let's go with your recommendations").
+- Reasons: Phase 1 report §8 (current ocean demand, no polished deep-sea exploration idle on Play, zones as a content pipeline, code-drawn art).
+- Consequences: game-001 starts Stage A; docs in `game-projects/game-001-abyss-station/docs/` until its repository exists.
+- Known counter-arguments: Phase 1 report §8 (PC evidence, Alchemist's Atelier has the clearer mobile gap).
+
+## D-0009 Personal Google Play developer account
+
+- Problem: a personal or an organisation account.
+- Selected: personal (owner, 2026-11-10).
+- Consequences: before production access, a closed test with ≥ 12 testers opted in for ≥ 14 continuous days; testers are recruited during development (aim 15–20). The store shows the owner's name as developer unless changed later.
+- Owner time: about 8 hours a week for testing and decisions; the roadmap is planned around one test build a week.
